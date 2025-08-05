@@ -1,1 +1,39 @@
+.enva# Golang build output
+*.exe
+*.test
+*.out
+
+# Output dari build manual
+main
+main.exe
+app
+app.exe
+
+# Dependency cache
+/vendor/
+/bin/
+/dist/
+
+# IDE/editor specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Env file
 .env
+.env.*
+
+# Log files
+*.log
+
+# Coverage
+coverage.out
+coverage.html
+
+# Test result
+*.prof
