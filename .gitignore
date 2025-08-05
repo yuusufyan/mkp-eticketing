@@ -10,8 +10,8 @@ app
 app.exe
 
 # Output dari build manual
-tmp/main
-tmp/main.exe
+/tmp/main
+/tmp/main.exe
 tmp/app
 tmp/app.exe
 
