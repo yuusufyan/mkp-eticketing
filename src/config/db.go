@@ -5,6 +5,8 @@ import (
 	"log"
 	"os"
 
+	"auth-rbac/src/models"
+
 	"github.com/joho/godotenv"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -33,4 +35,14 @@ func ConnectDB() {
 	}
 
 	fmt.Println("✅ DB Connected!")
+
+	err = DB.AutoMigrate(
+		&models.Role{},
+		&models.User{},
+		&models.Terminal{},
+		&models.Log{},
+	)
+	if err != nil {
+		log.Fatal("❌ Gagal auto migrate: ", err)
+	}
 }
