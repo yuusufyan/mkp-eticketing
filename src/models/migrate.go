@@ -7,5 +7,7 @@ func All() []interface{} {
 		&Permission{},
 		&UsersRoles{},
 		&RolesPermissions{},
+		&Menu{},
+		&PermissionMenu{},
 	}
 }
