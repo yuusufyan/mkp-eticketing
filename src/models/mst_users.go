@@ -5,10 +5,11 @@ import (
 	"time"
 
 	"github.com/google/uuid"
+	"gorm.io/gorm"
 )
 
 func (User) TableName() string {
-	return "mst_user"
+	return "mst_users"
 }
 
 type User struct {
@@ -23,4 +24,11 @@ type User struct {
 	CreatedBy string
 	UpdatedAt time.Time
 	UpdatedBy string
+}
+
+func (u *User) BeforeCreate(tx *gorm.DB) (err error) {
+	if u.ID == uuid.Nil {
+		u.ID = uuid.New()
+	}
+	return
 }
