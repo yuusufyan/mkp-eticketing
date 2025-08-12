@@ -32,7 +32,6 @@ Thumbs.db
 
 # Env file
 .env
-.env.*
 
 # Log files
 *.log
