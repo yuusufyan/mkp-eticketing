@@ -36,12 +36,7 @@ func ConnectDB() {
 
 	fmt.Println("✅ DB Connected!")
 
-	err = DB.AutoMigrate(
-		&models.Role{},
-		&models.User{},
-		&models.Permission{},
-		&models.UsersRoles{},
-	)
+	err = DB.AutoMigrate(models.All()...)
 	if err != nil {
 		log.Fatal("❌ Gagal auto migrate: ", err)
 	}

@@ -19,7 +19,7 @@ type Role struct {
 }
 
 func (Role) TableName() string {
-	return "mst_role"
+	return "mst_roles"
 }
 
 func (r *Role) BeforeCreate(tx *gorm.DB) (err error) {
