@@ -8,7 +8,7 @@ import (
 	"gorm.io/gorm"
 )
 
-type Role struct {
+type Permission struct {
 	ID        uuid.UUID          `gorm:"type:uuid;primaryKey"`
 	Name      string             `gorm:"size:20;not null"`
 	Status    enums.StatusActive `gorm:"type:varchar(20);not null"`
@@ -18,13 +18,13 @@ type Role struct {
 	UpdatedBy string             `gorm:"size:20;not null"`
 }
 
-func (Role) TableName() string {
-	return "mst_role"
+func (Permission) TableName() string {
+	return "mst_permissions"
 }
 
-func (r *Role) BeforeCreate(tx *gorm.DB) (err error) {
-	if r.ID == uuid.Nil {
-		r.ID = uuid.New()
+func (p *Permission) BeforeCreate(tx *gorm.DB) (err error) {
+	if p.ID == uuid.Nil {
+		p.ID = uuid.New()
 	}
 	return
 }

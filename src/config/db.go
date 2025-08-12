@@ -39,8 +39,8 @@ func ConnectDB() {
 	err = DB.AutoMigrate(
 		&models.Role{},
 		&models.User{},
-		&models.Terminal{},
-		&models.Log{},
+		&models.Permission{},
+		&models.UsersRoles{},
 	)
 	if err != nil {
 		log.Fatal("❌ Gagal auto migrate: ", err)
