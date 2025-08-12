@@ -12,9 +12,10 @@ type Menu struct {
 	ID        uuid.UUID          `gorm:"type:uuid;primaryKey"`
 	Name      string             `gorm:"size:20;not null"`
 	Status    enums.StatusActive `gorm:"type:varchar(20);not null"`
-	CreatedAt time.Time          `gorm:"type:timestamp;not null"`
+	ParentID  uuid.UUID          `gorm:"type:uuid"`
+	CreatedAt time.Time          `gorm:"type:timestamp;default:CURRENT_TIMESTAMP;not null"`
 	CreatedBy string             `gorm:"size:20;not null"`
-	UpdatedAt time.Time          `gorm:"type:timestamp;not null"`
+	UpdatedAt time.Time          `gorm:"type:timestamp;default:CURRENT_TIMESTAMP;not null"`
 	UpdatedBy string             `gorm:"size:20;not null"`
 }
 

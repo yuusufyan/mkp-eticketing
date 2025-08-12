@@ -8,6 +8,6 @@ func All() []interface{} {
 		&UsersRoles{},
 		&RolesPermissions{},
 		&Menu{},
-		&PermissionMenu{},
+		&RolePermissionMenu{},
 	}
 }
