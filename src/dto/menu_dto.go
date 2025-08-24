@@ -3,7 +3,7 @@ package dto
 import (
 	"auth-rbac/src/utils/enums"
 
-	"github.com/Azure/azure-sdk-for-go/sdk/internal/uuid"
+	"github.com/google/uuid"
 )
 
 type CreateMenu struct {
@@ -21,6 +21,6 @@ func NewCreateMenu() CreateMenu {
 
 func NewCreateParent() CreateMenu {
 	return CreateMenu{
-		ParentID: nil, // default value
+		ParentID: uuid.Nil, // default value
 	}
 }
